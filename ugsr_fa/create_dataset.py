@@ -1,8 +1,3 @@
-"""
-Project: Unaligned Guided Thermal Image Super-Resolution
-Author: Honey Gupta (hn.gpt1@gmail.com)
-
-"""
 
 import csv
 import os
@@ -13,7 +8,7 @@ import click
 import datasets
 
 
-def create_list(foldername, fulldir=True, suffix=".png", multifolder=False, ):
+def create_list(foldername, fulldir=True, suffix=".jpg", multifolder=False, ):
 	file_list_tmp = os.listdir(foldername)
 	file_list_tmp.sort()
 	file_list = []
@@ -39,19 +34,19 @@ def create_list(foldername, fulldir=True, suffix=".png", multifolder=False, ):
 @click.command()
 @click.option('--input_image',
               type=click.STRING,
-              default='../datasets/flir_adas/ther_64_80',
+              default='/data/intern/thermal_datasets/FLIR_PAIRED/thermal_test_lr_4x',
               help='The path to the input images.')
 @click.option('--ground_truth',
               type=click.STRING,
-              default='../datasets/flir_adas/8x/ther',
+              default='/data/intern/thermal_datasets/FLIR_PAIRED/thermal_test_hr',
               help='The path to the ground truth images.')
 @click.option('--guide_image',
               type=click.STRING,
-              default='../datasets/flir_adas/8x/rgb',
+              default='/data/intern/thermal_datasets/FLIR_PAIRED/rgb_test',
               help='The path to the guide images.')
 @click.option('--dataset_name',
               type=click.STRING,
-              default='flir_test',
+              default='flir_test_neham',
               help='The name of the dataset.')
 @click.option('--do_shuffle',
               type=click.BOOL,
@@ -62,9 +57,9 @@ def create_dataset(input_image, ground_truth, guide_image,
 	list_a = create_list(input_image, True,
 	                     datasets.DATASET_TO_IMAGETYPE[dataset_name], False)
 	list_b = create_list(ground_truth, True,
-	                     '.png', False)
+	                     '.jpg', False)
 	list_c = create_list(guide_image, True,
-	                     '.png', False)
+	                     '.jpg', False)
 
 	output_path = datasets.PATH_TO_CSV[dataset_name]
 	num_rows = datasets.DATASET_TO_SIZES[dataset_name]

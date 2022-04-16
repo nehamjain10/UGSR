@@ -3,7 +3,8 @@ DATASET_TO_SIZES = {
 	'flir_test': 3, #1257,
 	'cats_test': 2, #50,
 	'cats_train': 944,
-	'flirone': 30
+	'flirone': 30,
+	'flir_test_neham': 514
 }
 
 PATH_TO_CSV = {
@@ -11,7 +12,8 @@ PATH_TO_CSV = {
 	'flir_test': './input/flir_test.csv',
 	'cats_test': './input/cats_test.csv',
 	'cats_train': './input/cats_train.csv',
-	'flirone': './input/flirone.csv'
+	'flirone': './input/flirone.csv',
+	'flir_test_neham': './input/flir_test_neham.csv'
 }
 
 DATASET_TO_IMAGETYPE = {
@@ -19,5 +21,6 @@ DATASET_TO_IMAGETYPE = {
 	'flir_test': '.png',
 	'cats_test': '.png',
 	'cats_train': '.png',
-	'flirone': '.png'
+	'flirone': '.png',
+	'flir_test_neham': '.jpg'
 }

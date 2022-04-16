@@ -1,5 +1,5 @@
 {
   "description": "Unaligned Guided Thermal Image Super-resolution.",
-  "dataset_name": "flir_test",
+  "dataset_name": "flir_test_neham",
   "do_flipping": 0
 }
